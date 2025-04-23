@@ -40,7 +40,7 @@ A FastAPI-based MCP-compliant server that routes requests to multiple LLM provid
   -H "Content-Type: application/json" \
   -d '{
     "identity": { "user_id": "demo" },
-    "memory": { "history": [] },
+    "memory": { "history": [ { "role": "user", "content": "who are you?" } ] },
     "tools": [],
     "docs": [],
     "extra": {}
