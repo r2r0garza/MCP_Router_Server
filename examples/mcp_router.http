@@ -1,0 +1,22 @@
+### Health check
+GET http://localhost:8000/health
+
+### Ask endpoint (valid)
+POST http://localhost:8000/ask
+Content-Type: application/json
+
+{
+  "identity": { "user_id": "demo" },
+  "memory": { "history": [] },
+  "tools": [],
+  "docs": [],
+  "extra": {}
+}
+
+### Ask endpoint (invalid, missing identity)
+POST http://localhost:8000/ask
+Content-Type: application/json
+
+{
+  "memory": { "history": [] }
+}
