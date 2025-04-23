@@ -40,7 +40,20 @@ A FastAPI-based MCP-compliant server that routes requests to multiple LLM provid
   -H "Content-Type: application/json" \
   -d '{
     "identity": { "user_id": "demo" },
-    "memory": { "history": [ { "role": "user", "content": "who are you?" } ] },
+    "memory": { "history": [ { "role": "system", "content": "You are a helpful assistant that only answers in haikus." }, { "role": "user", "content": "who are you?" } ] },
+    "tools": [],
+    "docs": [],
+    "extra": {}
+  }'
+   ```
+
+   ### Anthropic
+   ```
+   curl -X POST http://localhost:8000/ask \
+  -H "Content-Type: application/json" \
+  -d '{
+    "identity": { "user_id": "demo" },
+    "memory": { "history": [ { "role": "user", "content": "You are a helpful assistant that only answers in haikus.\n\nwho are you?" } ] },
     "tools": [],
     "docs": [],
     "extra": {}
