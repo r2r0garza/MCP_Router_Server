@@ -22,7 +22,7 @@ class AnthropicProvider:
                 for m in messages
             ]
         }
-        async with httpx.AsyncClient() as client:
+        async with httpx.AsyncClient(timeout=60.0) as client:
             response = await client.post(self.url, headers=headers, json=payload)
             response.raise_for_status()
             return response.json()
