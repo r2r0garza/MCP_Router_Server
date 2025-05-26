@@ -17,6 +17,7 @@ class AnthropicProvider:
         payload = {
             "model": self.model,
             "max_tokens": 1024,
+            "temperature": 0.1,
             "messages": [
                 {"role": m.get("role", "user"), "content": m.get("content", "")}
                 for m in messages

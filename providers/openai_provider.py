@@ -14,7 +14,8 @@ class OpenAIProvider:
         }
         payload = {
             "model": self.model,
-            "messages": messages
+            "messages": messages,
+            "temperature": 0.1
         }
         async with httpx.AsyncClient(timeout=60.0) as client:
             response = await client.post(self.url, headers=headers, json=payload)

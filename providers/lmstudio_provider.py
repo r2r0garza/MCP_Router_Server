@@ -8,7 +8,8 @@ class LMStudioProvider:
 
     async def chat(self, messages):
         payload = {
-            "messages": messages
+            "messages": messages,
+            "temperature": 0.1
         }
         headers = {}
         if self.api_key:
