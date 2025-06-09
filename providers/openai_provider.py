@@ -4,8 +4,9 @@ import httpx
 class OpenAIProvider:
     def __init__(self):
         self.api_key = os.getenv("OPENAI_API_KEY")
-        self.model = os.getenv("MODEL", "gpt-4")
-        self.url = "https://api.openai.com/v1/chat/completions"
+        self.model = os.getenv("MODEL", "gpt-4o-mini")
+        self.url = os.getenv("OPENAI_URL")
+        #"https://api.openai.com/v1/chat/completions"
 
     async def chat(self, messages):
         headers = {

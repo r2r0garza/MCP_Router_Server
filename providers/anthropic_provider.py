@@ -4,8 +4,9 @@ import httpx
 class AnthropicProvider:
     def __init__(self):
         self.api_key = os.getenv("ANTHROPIC_API_KEY")
-        self.model = os.getenv("MODEL", "claude-3-opus-20240229")
-        self.url = "https://api.anthropic.com/v1/messages"
+        self.model = os.getenv("MODEL", "claude-3-5-sonnet-20241022")
+        self.url = os.getenv("ANTRHOPIC_URL")
+        #"https://api.anthropic.com/v1/messages"
 
     async def chat(self, messages):
         headers = {
